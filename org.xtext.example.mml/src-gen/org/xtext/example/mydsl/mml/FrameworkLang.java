@@ -48,7 +48,17 @@ public enum FrameworkLang implements Enumerator
    * @generated
    * @ordered
    */
-  JAVA_WEKA(2, "JavaWeka", "Weka");
+  JAVA_WEKA(2, "JavaWeka", "Weka"),
+
+  /**
+   * The '<em><b>XG Boost</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #XG_BOOST_VALUE
+   * @generated
+   * @ordered
+   */
+  XG_BOOST(3, "XGBoost", "xgboost");
 
   /**
    * The '<em><b>SCIKIT</b></em>' literal value.
@@ -84,6 +94,17 @@ public enum FrameworkLang implements Enumerator
   public static final int JAVA_WEKA_VALUE = 2;
 
   /**
+   * The '<em><b>XG Boost</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #XG_BOOST
+   * @model name="XGBoost" literal="xgboost"
+   * @generated
+   * @ordered
+   */
+  public static final int XG_BOOST_VALUE = 3;
+
+  /**
    * An array of all the '<em><b>Framework Lang</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -95,6 +116,7 @@ public enum FrameworkLang implements Enumerator
       SCIKIT,
       R,
       JAVA_WEKA,
+      XG_BOOST,
     };
 
   /**
@@ -162,6 +184,7 @@ public enum FrameworkLang implements Enumerator
       case SCIKIT_VALUE: return SCIKIT;
       case R_VALUE: return R;
       case JAVA_WEKA_VALUE: return JAVA_WEKA;
+      case XG_BOOST_VALUE: return XG_BOOST;
     }
     return null;
   }

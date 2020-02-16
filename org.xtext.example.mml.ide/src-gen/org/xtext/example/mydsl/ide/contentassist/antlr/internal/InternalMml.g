@@ -785,6 +785,12 @@ rule__FrameworkLang__Alternatives
 		('Weka')
 		{ after(grammarAccess.getFrameworkLangAccess().getJavaWekaEnumLiteralDeclaration_2()); }
 	)
+	|
+	(
+		{ before(grammarAccess.getFrameworkLangAccess().getXGBoostEnumLiteralDeclaration_3()); }
+		('xgboost')
+		{ after(grammarAccess.getFrameworkLangAccess().getXGBoostEnumLiteralDeclaration_3()); }
+	)
 ;
 finally {
 	restoreStackSize(stackSize);

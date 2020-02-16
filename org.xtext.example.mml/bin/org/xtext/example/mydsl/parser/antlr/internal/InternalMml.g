@@ -1198,6 +1198,14 @@ ruleFrameworkLang returns [Enumerator current=null]
 				newLeafNode(enumLiteral_2, grammarAccess.getFrameworkLangAccess().getJavaWekaEnumLiteralDeclaration_2());
 			}
 		)
+		    |
+		(
+			enumLiteral_3='xgboost'
+			{
+				$current = grammarAccess.getFrameworkLangAccess().getXGBoostEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getFrameworkLangAccess().getXGBoostEnumLiteralDeclaration_3());
+			}
+		)
 	)
 ;
 

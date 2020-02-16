@@ -703,12 +703,14 @@ public class MmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRRKeyword_1_0 = (Keyword)cREnumLiteralDeclaration_1.eContents().get(0);
 		private final EnumLiteralDeclaration cJavaWekaEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cJavaWekaWekaKeyword_2_0 = (Keyword)cJavaWekaEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cXGBoostEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cXGBoostXgboostKeyword_3_0 = (Keyword)cXGBoostEnumLiteralDeclaration_3.eContents().get(0);
 		
 		//enum FrameworkLang:
-		//	SCIKIT="scikit-learn" | R | JavaWeka="Weka";
+		//	SCIKIT="scikit-learn" | R | JavaWeka="Weka" | XGBoost="xgboost";
 		public EnumRule getRule() { return rule; }
 		
-		//SCIKIT="scikit-learn" | R | JavaWeka="Weka"
+		//SCIKIT="scikit-learn" | R | JavaWeka="Weka" | XGBoost="xgboost"
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//SCIKIT="scikit-learn"
@@ -728,6 +730,12 @@ public class MmlGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//"Weka"
 		public Keyword getJavaWekaWekaKeyword_2_0() { return cJavaWekaWekaKeyword_2_0; }
+		
+		//XGBoost="xgboost"
+		public EnumLiteralDeclaration getXGBoostEnumLiteralDeclaration_3() { return cXGBoostEnumLiteralDeclaration_3; }
+		
+		//"xgboost"
+		public Keyword getXGBoostXgboostKeyword_3_0() { return cXGBoostXgboostKeyword_3_0; }
 	}
 	public class SVMKernelElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mml.SVMKernel");
@@ -1037,7 +1045,7 @@ public class MmlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//enum FrameworkLang:
-	//	SCIKIT="scikit-learn" | R | JavaWeka="Weka";
+	//	SCIKIT="scikit-learn" | R | JavaWeka="Weka" | XGBoost="xgboost";
 	public FrameworkLangElements getFrameworkLangAccess() {
 		return eFrameworkLang;
 	}

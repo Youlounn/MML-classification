@@ -53,9 +53,9 @@ public class MmlParsingJavaCompiler {
 		MMLModel model = parseHelper.parse("datainput \"iris.csv\"\n"
 				+ "mlframework xgboost\n"
 				+ "algorithm DT\n"
-				+ "mlframework Weka\n"
+				+ "mlframework xgboost\n"
 				+ "algorithm RF\n"
-				+ "mlframework Weka\n"
+				+ "mlframework xgboost\n"
 				+ "algorithm LogisticRegression\n"
 				+ "TrainingTest { percentageTraining 30 }\n"
 				+ "balanced_accuracy recall precision F1 accuracy macro_recall macro_precision macro_F1 macro_accuracy\n" 
@@ -70,13 +70,14 @@ public class MmlParsingJavaCompiler {
 			FrameworkLang framework = algos[i].getFramework();
 			if (framework.getLiteral() == "scikit-learn") {
 				MmlParsingJavaCompilerPython compiler = new MmlParsingJavaCompilerPython();
-				compiler.compileDataInput(model,al,i+1);
+				compiler.compileDataInput(model,al,i+1);	
 			}else if(framework.getLiteral() == "R") {
 				//Traitement R
 			}else if(framework.getLiteral() == "Weka") {
 				//Traitement Weka
 			}else if(framework.getLiteral() == "xgboost") {
-				System.out.println("test");
+				MmlParsingJavaCompilerXGBoost compiler = new MmlParsingJavaCompilerXGBoost();
+				compiler.compileDataInput(model,al,i+1);
 			}
 		}		
 	}
